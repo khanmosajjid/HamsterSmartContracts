@@ -18,8 +18,8 @@ contract HamsterCharacterNFTs is ERC721EnumerableUpgradeable, OwnableUpgradeable
     using AddressUpgradeable for address payable;
 
     CountersUpgradeable.Counter public _tokenIdCounter;
-   
-     event MintNFTEvent(address indexed _to, uint indexed _tokenID);
+    
+    event MintNFTEvent(address indexed _to, uint indexed _tokenID);
     string public baseURI;
 
 
@@ -67,21 +67,22 @@ contract HamsterCharacterNFTs is ERC721EnumerableUpgradeable, OwnableUpgradeable
 function _mint(address to, uint256 tokenId) internal virtual override(ERC721Upgradeable) {
     super._mint(to, tokenId);
 
-    // Place the logic that was in _beforeTokenTransfer here:
-    if (address(0) != to && marketplaceAddress != address(0)) {
-        IHamsterMarketplace market = IHamsterMarketplace(marketplaceAddress);
-        market.onTokenTransfer(address(0), tokenId);
-    }  
+    // // Place the logic that was in _beforeTokenTransfer here:
+    // if (address(0) != to && marketplaceAddress != address(0)) {
+    //     IHamsterMarketplace market = IHamsterMarketplace(marketplaceAddress);
+    //     market.onTokenTransfer(msg.sender, tokenId);
+    // }
 }
 
 function _transfer(address from, address to, uint256 tokenId) internal virtual override(ERC721Upgradeable) {
-    super._transfer(from, to, tokenId);
-
     // Place the logic that was in _beforeTokenTransfer here:
+    super._transfer(from, to, tokenId);
     if (from != address(0) && from != to && marketplaceAddress != address(0)) {
         IHamsterMarketplace market = IHamsterMarketplace(marketplaceAddress);
         market.onTokenTransfer(from, tokenId);
-    }  
+    }
+    
+
 }
 
 
@@ -125,7 +126,7 @@ function _transfer(address from, address to, uint256 tokenId) internal virtual o
          _tokenIdCounter.increment();
         uint256 tokenId = _tokenIdCounter.current();
         _safeMint(to, tokenId);
-        _setTokenURI(tokenId, string(abi.encodePacked( Strings.toString(id),".json")));
+        _setTokenURI(tokenId, string(abi.encodePacked(Strings.toString(id),".json")));
 
         mintedNFTs.push(id);
         emit MintNFTEvent(to,tokenId);
@@ -190,9 +191,6 @@ function _transfer(address from, address to, uint256 tokenId) internal virtual o
     function transfer(address to,uint256 tokenId) external{
         _transfer(msg.sender, to, tokenId);
     }
-
-
-
 }
 
 

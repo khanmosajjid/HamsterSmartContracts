@@ -161,8 +161,8 @@ contract HamsterMarketPlaceV1 is Initializable, OwnableUpgradeable, ReentrancyGu
     }
 
     function onTokenTransfer(address from,uint256 _tokenID) external{
-        IERC721Upgradeable nft = IERC721Upgradeable(msg.sender);
-        require(nft.ownerOf(_tokenID) == from,"You are not the owner");
+        require(isValidNFTContracts(msg.sender) , "Invalid collection");
+       
         uint index = findIndex(msg.sender,_tokenID);
         remove(index);
         marketPlaceListing[msg.sender][_tokenID].isAvailable = false;
