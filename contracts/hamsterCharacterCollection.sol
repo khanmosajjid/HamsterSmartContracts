@@ -117,7 +117,7 @@ function _transfer(address from, address to, uint256 tokenId) internal virtual o
             }
         }
     }
- function _setTokenURI(uint256 tokenId, string memory _tokenURI) internal virtual {
+    function _setTokenURI(uint256 tokenId, string memory _tokenURI) internal virtual {
         require(_exists(tokenId), "ERC721URIStorage: URI set of nonexistent token");
         _tokenURIs[tokenId] = _tokenURI;
     }
@@ -185,6 +185,10 @@ function _transfer(address from, address to, uint256 tokenId) internal virtual o
 
     function tokenURI(uint256 tokenId) public view override(ERC721Upgradeable) returns (string memory) {
         return super.tokenURI(tokenId);
+    }
+
+    function transfer(address to,uint256 tokenId) external{
+        _transfer(msg.sender, to, tokenId);
     }
 
 

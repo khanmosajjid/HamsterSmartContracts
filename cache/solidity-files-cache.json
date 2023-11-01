@@ -152,8 +152,8 @@
       ]
     },
     "/Users/nehashukla/Desktop/tusharProjects/HamsterSmartContract/contracts/hamsterCharacterCollection.sol": {
-      "lastModificationDate": 1698394976433,
-      "contentHash": "8cb5ab6e41e894ce33a57b702c24f038",
+      "lastModificationDate": 1698845682745,
+      "contentHash": "caaf5bf3a26448615d7e37b4fc3e0b12",
       "sourceName": "contracts/hamsterCharacterCollection.sol",
       "solcConfig": {
         "version": "0.8.8",
@@ -1104,47 +1104,6 @@
         "SignedMath"
       ]
     },
-    "/Users/nehashukla/Desktop/tusharProjects/HamsterSmartContract/contracts/hamsterMarketPlaceV2.sol": {
-      "lastModificationDate": 1698257096690,
-      "contentHash": "75c07908f026aef6cb76f502f67d326b",
-      "sourceName": "contracts/hamsterMarketPlaceV2.sol",
-      "solcConfig": {
-        "version": "0.8.8",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "storageLayout"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@openzeppelin/contracts-upgradeable/token/ERC721/IERC721Upgradeable.sol",
-        "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol",
-        "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol",
-        "@openzeppelin/contracts/token/ERC721/IERC721.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "HamsterMarketPlaceV2"
-      ]
-    },
     "/Users/nehashukla/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
       "lastModificationDate": 1697310124236,
       "contentHash": "48de4c9a3a4ae5ef66a2aa620843413f",
@@ -1220,8 +1179,8 @@
       ]
     },
     "/Users/nehashukla/Desktop/tusharProjects/HamsterSmartContract/contracts/hamsterMarketPlace.sol": {
-      "lastModificationDate": 1698256458186,
-      "contentHash": "9ace9d3d0946f48ff72c93f38a3c581e",
+      "lastModificationDate": 1698846184349,
+      "contentHash": "609915b836f1d7ad014eb21a2b01a8a7",
       "sourceName": "contracts/hamsterMarketPlace.sol",
       "solcConfig": {
         "version": "0.8.8",
