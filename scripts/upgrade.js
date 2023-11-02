@@ -1,7 +1,7 @@
 const { ethers, upgrades } = require("hardhat");
 
 async function main() {
-  const hamsterMarketV1Address = "YOUR_V1_CONTRACT_ADDRESS"; // replace with V1 contract address
+  const hamsterMarketV1Address = "0x9D060868daDDf3e4602f87a9794E4D1Ef390e878"; // replace with V1 contract address
 
   const HamsterMarketPlaceV2 = await ethers.getContractFactory(
     "HamsterMarketPlaceV2"
